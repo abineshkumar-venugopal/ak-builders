@@ -7,6 +7,7 @@ export type ProjectCategory =
 
 /** Who the building is for. Drives the filters on the projects page. */
 export type ProjectSector = "residential" | "commercial";
+export type ProjectSection = ProjectSector | "renovation";
 
 export const categoryLabels: Record<ProjectCategory, string> = {
   interior: "Interior",
@@ -20,12 +21,19 @@ export const sectorLabels: Record<ProjectSector, string> = {
   residential: "Residential",
 };
 
+export const projectSectionLabels: Record<ProjectSection, string> = {
+  residential: "Residential",
+  commercial: "Commercial",
+  renovation: "Renovation & Reconstruction",
+};
+
 export interface Project {
   slug: string;
   name: string;
   location: string;
   category: ProjectCategory;
   sector: ProjectSector;
+  section: ProjectSection;
   year: string;
   description: string;
   image: string;
@@ -41,13 +49,14 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "exterior",
     sector: "commercial",
+    section: "commercial",
     year: "2025",
     description:
       "A commercial hospitality project shaped around volume, shade, and a strong street presence.",
-    image: "/gallery/commercial/exterior/amutha-surabi-resto-bar/front-elevation.jpg",
-    thumb: "/gallery/commercial/exterior/amutha-surabi-resto-bar/front-elevation.jpg",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/commercial/exterior/amutha-surabi-resto-bar/front-elevation.jpg",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -56,13 +65,14 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "exterior",
     sector: "commercial",
+    section: "commercial",
     year: "2025",
     description:
       "A clinical commercial building designed for clarity, access, and daily ease of movement.",
-    image: "/gallery/commercial/exterior/murugan-hospital/facade.png",
-    thumb: "/gallery/commercial/exterior/murugan-hospital/facade.png",
+    image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/commercial/exterior/murugan-hospital/facade.png",
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -71,14 +81,15 @@ export const projects: Project[] = [
     location: "Tamil Nadu",
     category: "exterior",
     sector: "commercial",
+    section: "commercial",
     year: "2025",
     description:
       "A hospitality exterior project with a layered arrival experience and a softened landscape edge.",
-    image: "/gallery/commercial/exterior/vardha-resort/elevation.jpg",
-    thumb: "/gallery/commercial/exterior/vardha-resort/elevation.jpg",
+    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/commercial/exterior/vardha-resort/elevation.jpg",
-      "/gallery/commercial/exterior/vardha-resort/gate.jpg",
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -87,13 +98,14 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "interior",
     sector: "commercial",
+    section: "renovation",
     year: "2025",
     description:
       "A hospitality interior shaped by warmth, rhythm, and a strong visual identity.",
-    image: "/gallery/commercial/interior/amudha-surabi-cafe/interior-render.png",
-    thumb: "/gallery/commercial/interior/amudha-surabi-cafe/interior-render.png",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/commercial/interior/amudha-surabi-cafe/interior-render.png",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -102,14 +114,15 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "exterior",
     sector: "residential",
+    section: "residential",
     year: "2025",
     description:
       "A residential exterior shaped by a strong front elevation, light, and contextual materiality.",
-    image: "/gallery/residential/exterior/deva-residence-rain-bownagar/front-view.jpg",
-    thumb: "/gallery/residential/exterior/deva-residence-rain-bownagar/front-view.jpg",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/exterior/deva-residence-rain-bownagar/front-view.jpg",
-      "/gallery/residential/exterior/deva-residence-rain-bownagar/side-view.jpg",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -118,15 +131,16 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "exterior",
     sector: "residential",
+    section: "residential",
     year: "2025",
     description:
       "A modern residence harmonised with the street edge and a warm, tropical palette.",
-    image: "/gallery/residential/exterior/guru-nagar-residence/front-view.jpg",
-    thumb: "/gallery/residential/exterior/guru-nagar-residence/front-view.jpg",
+    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/exterior/guru-nagar-residence/front-view.jpg",
-      "/gallery/residential/exterior/guru-nagar-residence/rear-view.jpg",
-      "/gallery/residential/exterior/guru-nagar-residence/garden-view.jpg",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -135,16 +149,17 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "interior",
     sector: "residential",
+    section: "renovation",
     year: "2025",
     description:
       "A residence refined through calm interiors, layered textures, and naturally lit living spaces.",
-    image: "/gallery/residential/interior/essai-residence/living-room.png",
-    thumb: "/gallery/residential/interior/essai-residence/living-room.png",
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/interior/essai-residence/living-room.png",
-      "/gallery/residential/interior/essai-residence/dining.png",
-      "/gallery/residential/interior/essai-residence/bedroom.png",
-      "/gallery/residential/interior/essai-residence/study.png",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -153,14 +168,15 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "interior",
     sector: "residential",
+    section: "renovation",
     year: "2025",
     description:
       "An outdoor living experience designed for green relief, shade, and relaxed everyday use.",
-    image: "/gallery/residential/interior/terrace-garden/terrace-main.jpg",
-    thumb: "/gallery/residential/interior/terrace-garden/terrace-main.jpg",
+    image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/interior/terrace-garden/terrace-main.jpg",
-      "/gallery/residential/interior/terrace-garden/terrace-details.jpg",
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -169,13 +185,14 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "interior",
     sector: "residential",
+    section: "renovation",
     year: "2025",
     description:
       "A family living space brought together through a measured material palette and practical comfort.",
-    image: "/gallery/residential/interior/ram-kumar-residence/hall/living-hall.jpg",
-    thumb: "/gallery/residential/interior/ram-kumar-residence/hall/living-hall.jpg",
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/interior/ram-kumar-residence/hall/living-hall.jpg",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1800&q=85&fit=crop",
     ],
   },
   {
@@ -184,14 +201,15 @@ export const projects: Project[] = [
     location: "Chennai",
     category: "exterior",
     sector: "residential",
+    section: "residential",
     year: "2025",
     description:
       "A residence where the day-view volume and landscape framing establish the overall character.",
-    image: "/gallery/residential/exterior/villa-residence/day-view.png",
-    thumb: "/gallery/residential/exterior/villa-residence/day-view.png",
+    image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&fit=crop",
+    thumb: "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1000&q=85&fit=crop",
     gallery: [
-      "/gallery/residential/exterior/villa-residence/day-view.png",
-      "/gallery/residential/exterior/villa-residence/evening-view.png",
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=85&fit=crop",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=85&fit=crop",
     ],
   },
 ];

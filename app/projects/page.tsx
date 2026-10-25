@@ -5,21 +5,25 @@ import { useState } from "react";
 import Reveal from "@/components/Reveal";
 import ProjItem from "@/components/ProjItem";
 import { cn } from "@/lib/utils";
-import { projects, sectorLabels, type ProjectSector } from "@/lib/data";
+import {
+  projects,
+  projectSectionLabels,
+  type ProjectSection,
+} from "@/lib/data";
 
-// Filtered by who the building is for, not the kind of work. Built from the
-// sector labels, so a new sector gets a filter too.
-const filters: { key: "all" | ProjectSector; label: string }[] = [
-  { key: "all", label: "All" },
-  ...(Object.entries(sectorLabels) as [ProjectSector, string][]).map(
-    ([key, label]) => ({ key, label })
-  ),
+const filters: { key: ProjectSection; label: string }[] = [
+  { key: "residential", label: projectSectionLabels.residential },
+  { key: "commercial", label: projectSectionLabels.commercial },
+  { key: "renovation", label: projectSectionLabels.renovation },
 ];
 
 const itemDelays = [undefined, 1, 2, undefined, 1, 2, undefined, 1] as const;
 
 export default function ProjectsPage() {
-  const [active, setActive] = useState<"all" | ProjectSector>("all");
+  const [active, setActive] = useState<ProjectSection>("residential");
+  const filteredProjects = projects.filter(
+    (project) => project.section === active
+  );
 
   return (
     <>
@@ -36,7 +40,7 @@ export default function ProjectsPage() {
           as="div"
           className="self-end pb-3 text-[0.75rem] uppercase tracking-[0.15em] text-ash"
         >
-          {projects.length} Completed Works
+          {filteredProjects.length} Completed Works
         </Reveal>
       </div>
 
@@ -45,6 +49,7 @@ export default function ProjectsPage() {
           <button
             key={f.key}
             data-active={active === f.key}
+            aria-pressed={active === f.key}
             onClick={() => setActive(f.key)}
             className={cn(
               // The ::after is the active/hover underline, inset by the padding.
@@ -59,12 +64,11 @@ export default function ProjectsPage() {
       </div>
 
       <div className="grid grid-cols-2 gap-0.5 p-0.5 md:grid-cols-3">
-        {projects.map((project, i) => (
+        {filteredProjects.map((project, i) => (
           <ProjItem
             key={project.slug}
             project={project}
             delay={itemDelays[i]}
-            hidden={active !== "all" && project.sector !== active}
           />
         ))}
       </div>
