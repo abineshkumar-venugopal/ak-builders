@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 import TestimonialCarousel from "@/components/TestimonialCarousel";
 import Stats from "@/components/Stats";
 import LogoMarquee from "@/components/LogoMarquee";
-import ServiceMarquee from "@/components/ServiceMarquee";
+import ServiceMarque from "@/components/ServiceMarque";
 import { ContactTrigger } from "@/components/ContactDialog";
 import { Button } from "@/components/ui/button";
 import { eyebrowClass, sectionTitleClass } from "@/components/ui/typography";
@@ -218,7 +218,7 @@ export default function HomePage() {
       </div>
 
       <Reveal>
-        <ServiceMarquee items={services} />
+        <ServiceMarque items={services} />
       </Reveal>
 
       <section className="px-6 py-10 md:px-15">
