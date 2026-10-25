@@ -19,7 +19,7 @@ import {
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
+  { href: "/#about", label: "About" },
   // No services page: this lands on the section of the home page, from anywhere.
   { href: "/#services", label: "Services" },
   { href: "/#process", label: "Process" },
@@ -32,13 +32,20 @@ const links = [
  * Home only matches exactly; every other entry also covers its detail pages,
  * so /projects/meridian-house keeps Projects marked as the current section.
  */
-const isCurrent = (pathname: string, href: string) =>
-  href === "/" ? pathname === "/" : pathname.startsWith(href);
+const isCurrent = (pathname: string, href: string, hash: string) => {
+  if (href === "/") return pathname === "/" && hash === "";
+  const [route, section] = href.split("#");
+  if (route === "/" && section) {
+    return pathname === "/" && hash === `#${section}`;
+  }
+  return pathname.startsWith(route);
+};
 
 export default function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scrollY, setScrollY] = useState(0);
+  const [hash, setHash] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -48,6 +55,13 @@ export default function Nav() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleHashChange = () => setHash(window.location.hash);
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [pathname]);
 
   const scrolled = !isHome || scrollY > 60;
 
@@ -66,8 +80,8 @@ export default function Nav() {
       >
         {/* White logo */}
         <Image
-          src="/logo_white.png"
-          alt="Sri Atelier"
+          src="/logo_white.png?v=ak-builders"
+          alt="AK Builders"
           fill
           priority
           sizes="(max-width: 768px) 208px, 256px"
@@ -78,8 +92,8 @@ export default function Nav() {
 
         {/* Black logo */}
         <Image
-          src="/logo_black.png"
-          alt="Sri Atelier"
+          src="/logo_black.png?v=ak-builders"
+          alt="AK Builders"
           fill
           priority
           sizes="(max-width: 768px) 208px, 256px"
@@ -90,9 +104,9 @@ export default function Nav() {
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden items-center gap-10 md:flex">
+      <div className="hidden items-center gap-5 lg:flex xl:gap-10">
         {links.map((link) => {
-          const current = isCurrent(pathname, link.href);
+          const current = isCurrent(pathname, link.href, hash);
           if (link.cta) {
             return (
               <ContactTrigger key={link.href}>
@@ -126,7 +140,7 @@ export default function Nav() {
       <Sheet>
         <SheetTrigger
           aria-label="Open menu"
-          className="text-paper transition-colors duration-400 outline-none focus-visible:ring-2 focus-visible:ring-ring group-data-[scrolled=true]:text-ink md:hidden"
+          className="text-paper transition-colors duration-400 outline-none focus-visible:ring-2 focus-visible:ring-ring group-data-[scrolled=true]:text-ink lg:hidden"
         >
           <MenuIcon className="size-6" />
         </SheetTrigger>
@@ -136,7 +150,7 @@ export default function Nav() {
 
           <div className="flex flex-col gap-7">
             {links.map((link) => {
-              const current = isCurrent(pathname, link.href);
+              const current = isCurrent(pathname, link.href, hash);
               if (link.cta) {
                 return (
                   // SheetClose shuts the menu as the dialog opens over it.

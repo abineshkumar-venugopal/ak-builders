@@ -21,11 +21,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "SRI ATELIER — Architecture & Interior Design Studio, Chennai",
-    template: "%s — SRI ATELIER",
+    default: "AK Builders — Construction & Project Delivery, Chennai",
+    template: "%s — AK Builders",
   },
   description:
-    "SRI ATELIER is a Chennai-based architecture and interior design studio crafting residential, commercial, and cultural spaces across South India since 2008.",
+    "AK Builders delivers residential and commercial construction, planning and consultation, and renovation and remodeling in Chennai.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

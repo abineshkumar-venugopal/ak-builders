@@ -32,7 +32,7 @@ export type EnquiryState = {
 };
 
 /** Resend's shared test sender, usable before a domain is verified. */
-const DEFAULT_FROM = "Sri Atelier Website <onboarding@resend.dev>";
+const DEFAULT_FROM = "AK Builders Website <onboarding@resend.dev>";
 
 const FAILED =
   "Sorry, your enquiry couldn't be sent just now. Please try again, or email or WhatsApp us directly.";

@@ -241,45 +241,31 @@ export interface Service {
 export const services: Service[] = [
   {
     num: "01",
-    name: "Architectural Design & Drawing",
+    name: "Residential Construction",
     description:
-      "Buildings that earn their place — sited to the light and the street, planned around how people actually move, and detailed so they age well. We work across private homes, workplaces, and cultural and institutional projects, from first sketch to the drawings a contractor builds from.",
-    icon: "architecture",
+      "Thoughtfully managed home builds, shaped around your needs, your budget, and the way you want to live.",
+    icon: "construction",
   },
   {
     num: "02",
-    name: "Interior Design",
+    name: "Commercial Construction",
     description:
-      "Rooms resolved to the same standard as the shell that holds them. Layout, light, materials, joinery and furniture are drawn together rather than applied afterwards, so the interior reads as part of the architecture and not a layer added at the end.",
-    icon: "interior",
+      "Reliable spaces for business, delivered with practical coordination, considered materials, and attention to detail.",
+    icon: "architecture",
   },
   {
     num: "03",
-    name: "Landscape Design",
+    name: "Planning & Consultation",
     description:
-      "Ground, planting and water treated as architecture rather than decoration. Courtyards, terraces and thresholds are shaped to soften a building against the South Indian climate — shade where it is needed, breeze drawn through, and planting chosen to thrive locally.",
-    icon: "landscape",
-  },
-  {
-    num: "04",
-    name: "Planning & Feasibility",
-    description:
-      "The work before the design. Site appraisal, massing studies, regulatory review and honest cost and programme advice, so a brief is tested against what the site, the approvals and the budget will genuinely allow before commitments are made.",
+      "Start with a clear direction. We help you understand your site, define priorities, and plan the right next steps.",
     icon: "planning",
   },
   {
-    num: "05",
-    name: "3D Models & Visualisation",
+    num: "04",
+    name: "Renovation & Remodeling",
     description:
-      "Photoreal images, walkthroughs and physical models made during design, not after it. Seeing a scheme in material and daylight is how clients make confident decisions — and how we catch what a plan and section alone will not reveal.",
-    icon: "visualisation",
-  },
-  {
-    num: "06",
-    name: "Execution & Handover",
-    description:
-      "Design and delivery under one roof. We tender, appoint and coordinate the trades, hold the programme and the budget, and stay on site through the work — so responsibility for what gets built sits with the people who drew it.",
-    icon: "construction",
+      "Give an existing space a fresh start with carefully planned upgrades that make it work beautifully for today.",
+    icon: "interior",
   },
 ];
 
@@ -298,32 +284,36 @@ export const processSteps: ProcessStep[] = [
     name: "Consultation & Requirement Analysis",
     description:
       "We begin by listening. Site visits, long conversations, and a careful read of how you actually live or work — the light you wake up to, the rooms you avoid, the way a family or a team moves through a day. Nothing is drawn until the brief has been earned.",
-    image: "/process/consultation.png",
-    imageAlt: "The consultation stage of a Sri Atelier project",
+    image:
+      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=1400&q=85&fit=crop",
+    imageAlt: "The consultation stage of an AK Builders project",
   },
   {
     num: "02",
     name: "Design & Development",
     description:
       "Concepts take shape as sketches, models, and material boards, then are tested against sun path, structure, and budget. We work through several schemes rather than defending the first, refining plan and section until the idea holds from the street down to a door handle.",
-    image: "/process/design.png",
-    imageAlt: "The design stage of a Sri Atelier project",
+    image:
+      "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1400&q=85&fit=crop",
+    imageAlt: "The design stage of an AK Builders project",
   },
   {
     num: "03",
     name: "Execution & Coordination",
     description:
       "Drawings become a building. We stay on site through the work, coordinating contractors, checking every pour and joint, and resolving the details that only reveal themselves once the structure is standing. Material honesty is protected here or it is lost.",
-    image: "/process/build.png",
-    imageAlt: "The build stage of a Sri Atelier project",
+    image:
+      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=85&fit=crop",
+    imageAlt: "The build stage of an AK Builders project",
   },
   {
     num: "04",
     name: "Deliver",
     description:
       "Snagging, finishes, and a full handover — every system explained, every drawing archived. We return after the first season to see how the space has settled and how you have made it your own, because a building is only finished once it is lived in.",
-    image: "/process/deliver.png",
-    imageAlt: "The deliver stage of a Sri Atelier project",
+    image:
+      "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1400&q=85&fit=crop",
+    imageAlt: "The delivery stage of an AK Builders project",
   },
 ];
 

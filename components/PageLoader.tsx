@@ -220,7 +220,7 @@ export default function PageLoader() {
         )}
       >
         {/* =========================================
-            SRI ATELIER LOGO
+            AK BUILDERS LOGO
             ========================================= */}
         <div
           style={{ animationDelay: "150ms" }}
@@ -230,8 +230,8 @@ export default function PageLoader() {
           )}
         >
           <Image
-            src="/logo_black.png"
-            alt="Sri Atelier"
+            src="/logo_black.png?v=ak-builders"
+            alt="AK Builders"
             width={600}
             height={300}
             preload
@@ -262,7 +262,7 @@ export default function PageLoader() {
             motion-reduce:opacity-100
           "
         >
-          Architecture &amp; Design Studio
+          Construction &amp; Project Delivery · Chennai
         </p>
       </div>
     </div>

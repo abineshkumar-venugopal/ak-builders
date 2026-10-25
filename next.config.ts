@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
     return [{ source: "/contact", destination: "/#contact", permanent: false }];
   },
   images: {
+    localPatterns: [
+      { pathname: "/logo_black.png", search: "?v=ak-builders" },
+      { pathname: "/logo_white.png", search: "?v=ak-builders" },
+    ],
     remotePatterns: [
       {
         protocol: "https",

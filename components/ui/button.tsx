@@ -20,9 +20,9 @@ const buttonVariants = cva(
         outline:
           "border border-white/50 bg-transparent text-paper hover:bg-paper hover:text-ink",
         /** On light backgrounds — the default. */
-        dark: "bg-terracotta text-paper hover:bg-terracotta-dark",
+        dark: "bg-terracotta text-ink hover:bg-terracotta-dark hover:text-paper",
         /** Brass fill, for the closing call to action. */
-        accent: "bg-terracotta text-paper hover:bg-terracotta-dark",
+        accent: "bg-terracotta text-ink hover:bg-terracotta-dark hover:text-paper",
         /** Square icon button: carousel arrows, the project modal's close. */
         bordered:
           "border border-fog bg-transparent text-ink hover:border-terracotta hover:bg-terracotta hover:text-paper",

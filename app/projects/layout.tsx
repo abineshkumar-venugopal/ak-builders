@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Sixty-four completed interior, exterior, and construction projects by SRI ATELIER across South India.",
+    "Completed residential, commercial, and construction projects by AK Builders in Chennai and across South India.",
 };
 
 export default function ProjectsLayout({

@@ -14,9 +14,9 @@ const columns: {
   {
     title: "Studio",
     links: [
-      { href: "/about", label: "Who We Are" },
+      { href: "/#about", label: "Who We Are" },
       { href: "/projects", label: "Our Projects" },
-      { href: "/about", label: "Our Team" },
+      { href: "/#process", label: "Our Process" },
     ],
   },
   {
@@ -53,15 +53,15 @@ export default function Footer() {
         <div>
           {/* Intrinsic size is 1672x940; height is set in CSS and width follows. */}
           <Image
-            src="/logo_black.png"
-            alt="Sri Atelier"
+            src="/logo_black.png?v=ak-builders"
+            alt="AK Builders"
             width={1672}
             height={940}
             sizes="160px"
             className="mb-5 h-16 w-auto"
           />
           <p className="mt-2 text-[0.875rem] text-ash">
-            Architecture &amp; Interior Design Studio, Chennai
+            Construction &amp; Project Delivery, Chennai
           </p>
 
           <ul className="mt-8 space-y-4">
@@ -116,7 +116,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-14 border-t border-fog pt-8 text-center text-[0.85rem] text-ash">
-        Copyright © {new Date().getFullYear()} Sri Atelier | All rights
+        Copyright © {new Date().getFullYear()} AK Builders | All rights
         reserved.
       </div>
     </footer>
